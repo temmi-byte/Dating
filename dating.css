@@ -1,0 +1,229 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #0b0b0b;
+  color: white;
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(10px);
+  padding: 12px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #ff2f92;
+}
+
+.nav-links a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: white;
+  font-size: 0.95rem;
+}
+
+.menu-btn {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* MOBILE SIDEBAR */
+.mobile-sidebar {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 70%;
+  height: 100vh;
+  background: #0b0b0b;
+  padding: 40px 20px;
+  transition: 0.3s;
+  z-index: 2000;
+}
+
+.mobile-sidebar a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.close-btn {
+  font-size: 2rem;
+  color: #ff2f92;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+}
+
+/* PUSH HERO DOWN BECAUSE NAVBAR IS FIXED */
+.dating-hero {
+  margin-top: 60px;
+}
+
+/* HERO */
+.dating-hero {
+  height: 80vh;
+  background: url("dating-hero.jpg") center/cover no-repeat;
+  position: relative;
+}
+
+.overlay {
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6), #000);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.overlay h1 {
+  font-size: 2.5rem;
+  color: #ff2f92;
+}
+
+.overlay p {
+  font-size: 1rem;
+  max-width: 500px;
+  margin-top: 10px;
+}
+
+/* CITY SECTION */
+.city-section {
+  padding: 40px 5%;
+}
+
+.city-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+/* Horizontal Scroll Row */
+.members-row {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.member-card {
+  min-width: 200px;
+  background: #111;
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(255,47,146,0.2);
+}
+
+.member-card img {
+  width: 100%;
+  border-radius: 10px;
+  height: 220px;
+  object-fit: cover;
+}
+
+.member-card h3 {
+  margin: 10px 0 5px;
+}
+
+.pay-btn {
+  display: block;
+  background: #ff2f92;
+  color: white;
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+/* WHAT WE DO */
+.what-we-do {
+  padding: 50px 5%;
+  background: #111;
+}
+
+.what-we-do h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.feature-box {
+  background: #0b0b0b;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(255,47,146,0.15);
+}
+
+.feature-box i {
+  font-size: 30px;
+  color: #ff2f92;
+  margin-bottom: 10px;
+}
+
+/* SUPPORT */
+.support {
+  padding: 40px 5%;
+  text-align: center;
+}
+
+.support-btn {
+  background: #25D366;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+  .overlay h1 {
+    font-size: 2rem;
+  }
+
+  .members-row {
+    gap: 10px;
+  }
+
+  .member-card {
+    min-width: 160px;
+  }
+}
