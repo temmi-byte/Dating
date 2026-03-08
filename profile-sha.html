@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Shawneey  | Profile</title>
+
+  <link rel="stylesheet" href="profile.css">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+
+  <div class="profile-header">
+ <img src="sha1.jpg" 
+     alt="Profile Photo" 
+     class="pfp"
+     onclick="openPfp(this.src)">
+  <div class="profile-basic">
+  </div>
+</div>
+
+  <!-- PROFILE INFO -->
+<section class="profile-info">
+
+  <h1 style="text-align: center;">Shawneey</h1>
+
+  <p class="location">
+    <i class="fa-solid fa-location-dot"></i> Vancouver, British Columbia
+  </p>
+
+  <p class="bio">
+  Nature lover with a calm spirit.
+  </p>
+
+  <div class="details">
+    <div><strong>Age</strong> 28</div>
+    <div><strong>Language:</strong> English</div>
+    <div><strong>Availability:</strong> 24/7</div>
+  </div>
+
+</section>
+
+<!-- PHOTO GALLERY -->
+<section class="profile-gallery">
+  <h2>Photos</h2>
+
+  <div class="gallery-grid">
+    <img src="sha1.jpg">
+    <img src="sha2.jpg">
+    <img src="sha3.jpg">
+    <img src="sha4.jpg">
+    <img src="sha5.jpg">
+    <img src="sha6.jpg">
+    <img src="sha7.jpg">
+    <img src="sha8.jpg">
+  </div>
+</section>
+
+<!-- LIGHTBOX VIEWER -->
+<div id="lightbox" class="lightbox">
+  <span class="close">&times;</span>
+  <span class="nav prev">&#10094;</span>
+  <span class="nav next">&#10095;</span>
+
+  <img id="lightbox-img">
+  <div id="counter"></div>
+</div>
+
+<!-- CONTACT ACTION -->
+<section class="contact-box">
+  <p>To proceed, contact support to complete booking.</p>
+
+  <a href="https://t.me/realpeople_realvibes" class="contact-btn">
+    <i class="fa-brands fa-whatsapp"></i> Continue on Telegram
+  </a>
+</section>
+
+<div id="pfpModal" class="pfp-modal" onclick="closePfp()">
+  <span class="pfp-close">&times;</span>
+  <img id="pfpFull">
+</div>
+
+<script>
+function openPfp(src){
+  const modal = document.getElementById("pfpModal");
+  const img = document.getElementById("pfpFull");
+  img.src = src;
+  modal.style.display = "flex";
+}
+
+function closePfp(){
+  const modal = document.getElementById("pfpModal");
+  modal.style.display = "none";
+}
+</script>
+<script>
+const images = document.querySelectorAll(".gallery-grid img");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const counter = document.getElementById("counter");
+
+let currentIndex = 0;
+
+
+// OPEN
+images.forEach((img, index) => {
+  img.addEventListener("click", () => {
+    lightbox.style.display = "flex";
+    currentIndex = index;
+    showImage();
+  });
+});
+
+// SHOW IMAGE
+function showImage() {
+  lightboxImg.src = images[currentIndex].src;
+  counter.textContent = `${currentIndex + 1} / ${images.length}`;
+  lightboxImg.classList.remove("zoomed");
+}
+
+// CLOSE
+document.querySelector(".close").onclick = () => {
+  lightbox.style.display = "none";
+};
+
+// NEXT / PREV
+document.querySelector(".next").onclick = () => {
+  currentIndex = (currentIndex + 1) % images.length;
+  showImage();
+};
+
+document.querySelector(".prev").onclick = () => {
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  showImage();
+};
+
+// CLICK IMAGE TO ZOOM
+lightboxImg.onclick = () => {
+  lightboxImg.classList.toggle("zoomed");
+};
+
+// CLOSE ON BACKGROUND CLICK
+lightbox.onclick = (e) => {
+  if (e.target === lightbox) {
+    lightbox.style.display = "none";
+  }
+};
+
+// SWIPE SUPPORT (MOBILE)
+let startX = 0;
+
+lightbox.addEventListener("touchstart", e => {
+  startX = e.touches[0].clientX;
+});
+
+lightbox.addEventListener("touchend", e => {
+  let endX = e.changedTouches[0].clientX;
+
+  if (startX - endX > 50) {
+    document.querySelector(".next").click();
+  }
+
+  if (endX - startX > 50) {
+    document.querySelector(".prev").click();
+  }
+});
+</script>
+</body>
+</html>
