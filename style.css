@@ -1,0 +1,365 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #0b0b0f;
+  color: white;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: rgba(0,0,0,0.7);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ff2f92;
+}
+
+nav a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* HAMBURGER ICON */
+.menu-toggle{
+  display:none;
+  flex-direction:column;
+  cursor:pointer;
+}
+
+.menu-toggle span{
+  width:25px;
+  height:3px;
+  background:white;
+  margin:4px 0;
+  transition:0.3s;
+}
+
+/* MOBILE SIDEBAR */
+.mobile-menu{
+  position:fixed;
+  top:0;
+  right:-100%;
+  width:250px;
+  height:100vh;
+  background:#0b0b0f;
+  padding:60px 20px;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  transition:0.3s ease;
+  z-index:9999;
+}
+
+.mobile-menu a{
+  color:white;
+  text-decoration:none;
+  font-size:18px;
+  border-bottom:1px solid #222;
+  padding-bottom:10px;
+}
+
+.close-btn{
+  position:absolute;
+  top:15px;
+  right:20px;
+  font-size:28px;
+  color:white;
+  cursor:pointer;
+}
+
+
+/* SHOW HAMBURGER ON MOBILE */
+@media(max-width:768px){
+  nav{
+    display:none;
+  }
+
+  .menu-toggle{
+    display:flex;
+  }
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  background: url("hero.jpg") center/cover no-repeat;
+  position: relative;
+}
+
+.hero-overlay {
+  background: linear-gradient(120deg, rgba(0,0,0,0.7), rgba(255,47,146,0.4));
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 80px 40px;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  max-width: 500px;
+}
+
+.hero-content p {
+  margin-top: 15px;
+  font-size: 18px;
+  max-width: 400px;
+}
+
+.hero-buttons{
+  margin-top:20px;
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.btn-dating,
+.btn-massage{
+  padding:14px 30px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:bold;
+  font-size:16px;
+  transition:0.3s;
+}
+
+/* Dating button */
+.btn-dating{
+  background:#ff2f92;
+  color:white;
+}
+
+/* Massage button */
+.btn-massage{
+  background:white;
+  color:#ff2f92;
+  border:2px solid #ff2f92;
+}
+
+/* Hover effects */
+.btn-dating:hover{
+  background:#d6006e;
+}
+
+.btn-massage:hover{
+  background:#ff2f92;
+  color:white;
+}
+
+/* Mobile */
+@media(max-width:768px){
+  .hero-buttons{
+    justify-content:center;
+  }
+
+  .btn-dating,
+  .btn-massage{
+    width:100%;
+    text-align:center;
+  }
+}
+
+.how-it-works {
+  padding: 50px 5%;
+  text-align: center;
+  background: #0b0b0b;
+  color: #fff;
+}
+
+.how-it-works h2 {
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+}
+
+.steps {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.step {
+  background: #111;
+  padding: 25px 20px;
+  border-radius: 12px;
+  max-width: 280px;
+  flex: 1;
+  box-shadow: 0 0 10px rgba(255, 47, 146, 0.15);
+}
+
+.step-icon {
+  font-size: 28px;
+  color: #ff2f92;
+  margin-bottom: 10px;
+}
+
+.step h3 {
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+.step p {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .steps {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* FOOTER */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: black;
+  font-size: 12px;
+}
+
+.footer-support {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.footer-support h3 {
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+.footer-support p {
+  font-size: 0.85rem;
+  color: #bbb;
+  margin-bottom: 10px;
+}
+
+.support-link {
+  display: inline-block;
+  background: #25D366;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.support-link i {
+  margin-right: 6px;
+}
+
+.whatsapp-float{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  z-index: 9999;
+}
+
+.whatsapp-float img{
+  width: 32px;
+  height: 32px;
+}
+
+/* Mobile smaller */
+@media(max-width:768px){
+  .whatsapp-float{
+    width: 50px;
+    height: 50px;
+  }
+}
+
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 32px;
+  }
+
+  .stats {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .stat-box {
+    margin-bottom: 20px;
+  }
+
+  .header {
+    padding: 10px 20px;
+  }
+
+  nav a {
+    font-size: 12px;
+    margin-left: 10px;
+  }
+}
+
+.follow-us{
+  text-align:center;
+  padding:60px 20px;
+  background:#141414;
+}
+
+.follow-us h2{
+  font-size:28px;
+  margin-bottom:10px;
+}
+
+.follow-us p{
+  color:#d6cdcd;
+  margin-bottom:25px;
+}
+
+.social-links{
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  flex-wrap:wrap;
+}
+
+.social-links a{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:12px 22px;
+  background:#c4046d;
+  border-radius:30px;
+  text-decoration:none;
+  color:#c4c2c2;
+  font-weight:500;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+
+.social-links a:hover{
+  transform:translateY(-3px);
+}
