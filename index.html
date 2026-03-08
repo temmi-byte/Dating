@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>SecretHook & Relax SPa_globally</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="logo">SecretHook & Relax SPa_globally</div>
+  <nav>
+    <a href="#hero">Home</a>
+    <a href="dating.html">Dating</a>
+    <a href="massage.html">Massage & Happy ending</a>
+    <a href="#Contact">Contact</a>
+  </nav>
+  <!-- HAMBURGER ICON (MOBILE) -->
+<div class="menu-toggle" onclick="toggleMenu()">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<!-- MOBILE SIDEBAR -->
+<div class="mobile-menu" id="mobileMenu">
+  
+  <!-- CLOSE BUTTON -->
+  <div class="close-btn" onclick="toggleMenu()">×</div>
+
+  <a href="#hero">Home</a>
+  <a href="dating.html">Dating</a>
+  <a href="massage.html">Massage & Happy ending</a>
+  <a href="#contact">Contact</a>
+</div>
+
+
+</header>
+
+<section class="hero" id="hero">
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <h1>Love Like in the Movies</h1>
+      <p>Meet verified singles and premium private connections.</p>
+
+      <!-- ✅ BUTTONS MUST BE HERE -->
+      <div class="hero-buttons">
+        <a href="dating.html" class="btn-dating">Dating</a>
+        <a href="massage.html" class="btn-massage">Massage & Happy Ending</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="how-it-works">
+  <h2>How It Works</h2>
+
+  <div class="steps">
+
+    <div class="step">
+      <div class="step-icon">
+        <i class="fa-solid fa-hand-pointer"></i>
+      </div>
+      <h3>Choose a Service</h3>
+      <p>Select Dating or Massage from the homepage.</p>
+    </div>
+
+    <div class="step">
+      <div class="step-icon">
+        <i class="fa-brands fa-whatsapp"></i>
+      </div>
+      <h3>Contact & Pay</h3>
+      <p>Chat with support on WhatsApp and complete payment.</p>
+    </div>
+
+    <div class="step">
+      <div class="step-icon">
+        <i class="fa-solid fa-check-circle"></i>
+      </div>
+      <h3>Get Access</h3>
+      <p>Receive details and proceed with your booking.</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="follow-us">
+  <h2>Follow Us</h2>
+  <p>Stay connected with us on social media</p>
+
+  <div class="social-links">
+
+    <a href="https://www.tiktok.com/@secrethook_and_relax_spa?_r=1&_t=ZS-94RjEVgzvHu" target="_blank">
+      <i class="fab fa-tiktok"></i>
+      TikTok
+    </a>
+
+    <a href="https://www.facebook.com/Secrethookandrelaxspaglobally" target="_blank">
+      <i class="fab fa-facebook-f"></i>
+      Facebook
+    </a>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+ <section id="Contact">
+<footer class="footer">
+  <div class="footer-support">
+  <h3>Customer Care</h3>
+  <p>Need assistance? Our support team is available.</p>
+
+  <a href="https://wa.me/+18164333025" class="support-link">
+    <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+  </a> <br><br><br>
+
+   <p>© 2026 SecretHook & Relax SPa_globally. All Rights Reserved.</p>
+</div>
+
+</footer>
+</section>
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/+18164333025" class="whatsapp-float" target="_blank">
+  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+</a>
+
+<script>
+  function toggleMenu(){
+  const menu = document.getElementById("mobileMenu");
+  if(menu.style.right === "0px"){
+    menu.style.right = "-100%";
+  } else {
+    menu.style.right = "0px";
+  }
+}
+</script>
+
+</body>
+</html>
